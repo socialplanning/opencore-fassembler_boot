@@ -1,0 +1,69 @@
+0.7
+---
+
+The ``profile_url`` and ``default_profile_url`` can now be specified
+as svn://, svn+ssh://, and file:// URLs also.  Previously the only
+options were http://, https:// and relative paths (which are treated
+as suffixes against https://svn.openplans.org/svn/build/requirements)
+
+0.6
+---
+
+Prepend file:// to etc_svn_repo if no protocol is specified.
+
+Fix bug in newbuild.sh script, where it looks for "fassembler-req.txt",
+which was failing when using a relative requirements profile
+directory rather than an absolute path.
+
+Check that a ``builds`` directory exists under ``base_dir`` before
+running newbuild.sh
+
+0.5
+---
+
+Add an optional parameter num_extra_zopes which, if set, will
+cause N extra zope instances to be installed at the end of the build.
+
+Requires fassembler>=0.5 (0.4 which added the ``extrazope`` project
+and 0.5 which added the ``num_extra_zopes`` setting);
+opencore-fassembler_projects>=0.3 which now respects the
+``num_extra_zopes`` setting when building the frontend; and
+libopencore>=0.4 which allows load-balanced proxying to a set of zope
+servers.
+
+0.4.1
+-----
+
+Fixed typo in in-process docs.
+
+0.4
+---
+
+Removed fassembler_projects parameter. Instead, the bootstrap script now looks for
+a file "fassembler-req.txt" in the profile directory to be built, since profiles
+should manage their own requirements.
+
+0.3.2
+-----
+
+Renamed ``rebuild-opencore`` -> ``rebuild-opencore-site``
+
+Added ``new-opencore-site-config`` command that simply prints the config 
+template to stdout (useful for existing deployment structures) 
+
+0.3.1
+-----
+
+Passing profile_url as a positional arg was broken.  It works now.
+
+0.3
+---
+
+New package opencore-fassembler_boot, based on OpenplansBoot.
+
+Redesigned to use configuration files managed per-site, and to make the newbuild.sh script non-public.
+
+0.2
+---
+
+- Remove --use-plone3 as an option; obsoleted by default-build.ini
