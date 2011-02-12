@@ -54,7 +54,7 @@ cd ${BASEDIR}
 cd builds
 
 echo -n "refreshing fassembler-boot.py..."
-svn export https://svn.openplans.org/svn/fassembler/trunk/fassembler-boot.py
+svn export https://svn.socialplanning.org/svn/fassembler/trunk/fassembler-boot.py
 echo "done."
 
 DATE=$(date +%Y%m%d)

@@ -1,3 +1,8 @@
+0.7.1
+-----
+
+Pull fassembler-boot from svn.socialplanning.org instead of svn.openplans.org
+
 0.7
 ---
 
