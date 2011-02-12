@@ -6,6 +6,9 @@ as svn://, svn+ssh://, and file:// URLs also.  Previously the only
 options were http://, https:// and relative paths (which are treated
 as suffixes against https://svn.openplans.org/svn/build/requirements)
 
+Update location of default requirement profile to svn.socialplanning.org
+instead of svn.openplans.org
+
 0.6
 ---
 
