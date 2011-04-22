@@ -54,7 +54,7 @@ cd ${BASEDIR}
 cd builds
 
 echo -n "refreshing fassembler-boot.py..."
-if [ -e fassembler-boot.py ]
+if [ -e fassembler-boot.py ]; then
     rm fassembler-boot.py
 fi
 wget --no-check-certificate https://github.com/socialplanning/fassembler/raw/master/fassembler-boot.py
