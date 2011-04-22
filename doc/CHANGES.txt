@@ -1,3 +1,8 @@
+0.7.2
+-----
+
+Pull fassembler-boot from github.com/socialplanning instead of svn.socialplanning.org (sigh)
+
 0.7.1
 -----
 
