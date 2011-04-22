@@ -54,7 +54,8 @@ cd ${BASEDIR}
 cd builds
 
 echo -n "refreshing fassembler-boot.py..."
-svn export https://svn.socialplanning.org/svn/fassembler/trunk/fassembler-boot.py
+wget --no-check-certificate https://github.com/socialplanning/fassembler/raw/master/fassembler-boot.py
+chmod +x fassembler-boot.py
 echo "done."
 
 DATE=$(date +%Y%m%d)
