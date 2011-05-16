@@ -1,0 +1,4 @@
+include README.txt
+include doc/CHANGES.txt
+include fassembler_boot/newbuild.sh
+include fassembler_boot/opencore.conf
