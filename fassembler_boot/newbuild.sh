@@ -17,6 +17,8 @@ BASE_PORT="$5"
 
 NUM_EXTRA_ZOPES="$6"
 
+USE_WGET="$7"
+
 if [ `uname -s` == "Darwin" ]; then
 	# Unfortunately BSD sed is not fully compatible with GNU sed.
 	DB_PREFIX="$(echo ${INSTANCE%.*} | sed -E 's/[^a-zA-Z0-9_]+/_/g')_"
@@ -42,12 +44,14 @@ if [[ $REQ_DIR != http://* && $REQ_DIR != https://* && $REQ_DIR != file://* && $
   REQ_SVN="$REQ_BASE/$REQ_DIR"
 fi
 
-svn ls $REQ_SVN &> /dev/null
-if [ $? != 0 ]; then
-    echo "The directory $REQ_SVN does not exist."
-    echo "Available:"
-    svn cat https://svn.openplans.org/svn/scripts/build/list_req_dirs.py | python
-    exit 3
+if [ $USE_WGET == "0" ] ; then
+    svn ls $REQ_SVN &> /dev/null
+    if [ $? != 0 ]; then
+	echo "The directory $REQ_SVN does not exist."
+	echo "Available:"
+	svn cat https://svn.openplans.org/svn/scripts/build/list_req_dirs.py | python
+	exit 3
+    fi
 fi
 
 cd ${BASEDIR}
@@ -76,7 +80,12 @@ done
 cd $DIR
 
 FASSEMBLER_EXTRAS="$REQ_SVN/$FASSEMBLER_EXTRAS_FILE"
-svn export $FASSEMBLER_EXTRAS
+if [ $USE_WGET == "0" ]; then
+    svn export $FASSEMBLER_EXTRAS
+fi
+if [ $USE_WGET == "1" ]; then
+    wget --no-check-certificate $FASSEMBLER_EXTRAS
+fi
 if [ $? == 0 ]; then
     echo fassembler/bin/pip install -r $FASSEMBLER_EXTRAS_FILE
     fassembler/bin/pip install -r $FASSEMBLER_EXTRAS_FILE

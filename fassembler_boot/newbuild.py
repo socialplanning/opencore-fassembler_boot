@@ -2,7 +2,7 @@ import subprocess
 from pkg_resources import resource_filename
 from fassembler_boot.config import config as get_config
 
-def start_build(base_dir, config_path=None, profile_url=None):
+def start_build(base_dir, config_path=None, profile_url=None, use_wget=False):
     script = resource_filename('fassembler_boot', 'newbuild.sh')
 
     if config_path is None:
@@ -37,9 +37,10 @@ setting in your configuration file (%s)""" % config_path)
         raise ValueError(
             "If supplied, num_extra_zopes must be an integer")
 
+    use_wget = str(int(use_wget))
     cmd = [script,
            profile_url, base_dir, etc_svn_repo, 
-           site_fqdn, base_port, extra_zopes]
+           site_fqdn, base_port, extra_zopes, use_wget]
     print "using profile url: %s" % profile_url
     print cmd
     
@@ -69,6 +70,13 @@ parser.add_option(
     default=None,
     help="Base directory of the site")
 
+parser.add_option(
+    '-w', '--wget',
+    dest="use_wget",
+    action="store_true",
+    default=False,
+    help="Download requirement profiles with wget instead of SVN")
+
 import os
 
 if __name__ == '__main__':
@@ -84,4 +92,5 @@ def main():
     if len(args) > 0:
         profile_url = args[0]
 
-    start_build(base_dir, config_path, profile_url)
+    use_wget = options.use_wget
+    start_build(base_dir, config_path, profile_url, use_wget)
