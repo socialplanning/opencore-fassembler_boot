@@ -91,8 +91,8 @@ if [ $? == 0 ]; then
     fassembler/bin/pip install -r $FASSEMBLER_EXTRAS_FILE
 fi
 
-echo bin/fassembler base_port="$BASE_PORT" var="$BASEDIR/var" db_prefix=${DB_PREFIX} etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} requirements_svn_repo="$REQ_SVN" num_extra_zopes=${NUM_EXTRA_ZOPES}  fassembler:topp
-bin/fassembler base_port="$BASE_PORT" var="$BASEDIR/var" db_prefix=${DB_PREFIX} etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} requirements_svn_repo="$REQ_SVN" num_extra_zopes=${NUM_EXTRA_ZOPES} fassembler:topp
+echo bin/fassembler base_port="$BASE_PORT" var="$BASEDIR/var" db_prefix=${DB_PREFIX} etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} requirements_svn_repo="$REQ_SVN" num_extra_zopes=${NUM_EXTRA_ZOPES} requirements_use_wget=${USE_WGET} fassembler:topp
+bin/fassembler base_port="$BASE_PORT" var="$BASEDIR/var" db_prefix=${DB_PREFIX} etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} requirements_svn_repo="$REQ_SVN" num_extra_zopes=${NUM_EXTRA_ZOPES} requirements_use_wget=${USE_WGET} fassembler:topp
 
 echo bin/fassembler etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} missing 
 bin/fassembler etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} missing 
