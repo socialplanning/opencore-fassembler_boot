@@ -57,6 +57,9 @@ fi
 cd ${BASEDIR}
 cd builds
 
+echo -n "downloading setuptools-0.6c11-py2.4.egg ..."
+wget --no-check-certificate http://pypi.python.org/packages/2.4/s/setuptools/setuptools-0.6c11-py2.4.egg
+
 echo -n "refreshing fassembler-boot.py..."
 if [ -e fassembler-boot.py ]; then
     rm fassembler-boot.py
