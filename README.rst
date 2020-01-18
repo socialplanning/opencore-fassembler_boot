@@ -29,6 +29,18 @@ A third command is provided as well:
    this may be useful for quickly generating a configuration that can be
    used with ``rebuild-opencore-site``.
 
+
+Installation
+============
+
+For install this package execute the following command:
+
+::
+
+  $ pip-2.4 install -f https://dist.socialplanning.org/eggs/ \
+                    -r requirements.txt
+
+
 User / Developer Resources
 ==========================
 
