@@ -10,7 +10,7 @@ Changelog
 
 %s
 """ % (open('README.txt').read(),
-       open('doc/CHANGES.txt').read())
+       open('docs/CHANGES.txt').read())
 
 setup(name='opencore-fassembler_boot',
       version=version,
