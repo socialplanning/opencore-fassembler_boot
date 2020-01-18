@@ -4,7 +4,7 @@ opencore-fassembler_boot
 
 This is a "bootstrap" package that is used to generate new deployments
 of the OpenCore software stack, the web-based group collaboration
-toolkit that powers `coactivate.org <http://www.coactivate.org/>`_ and
+toolkit that powers `coactivate.org <https://www.coactivate.org/>`_ and
 other websites.
 
 Usage
@@ -48,9 +48,9 @@ For install this package execute the following command:
 User / Developer Resources
 ==========================
 
-* `The Opencore Project <http://www.coactivate.org/projects/opencore>`_
+* `The Opencore Project <https://www.coactivate.org/projects/opencore>`_.
 
-* `#opencore <irc://irc.freenode.net/opencore>`_
+* IRC **#opencore** chat at ``irc://irc.freenode.net/opencore``.
 
 
 Contribute
