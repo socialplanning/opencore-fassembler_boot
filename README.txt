@@ -35,3 +35,9 @@ User / Developer Resources
 * `The Opencore Project <http://www.coactivate.org/projects/opencore>`_
 
 * `#opencore <irc://irc.freenode.net/opencore>`
+
+
+License
+=======
+
+The project is licensed under the GPLv3, more details see docs/LICENSE.txt file.
