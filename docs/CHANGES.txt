@@ -1,3 +1,15 @@
+0.7.3
+-----
+
+Updated metadata classifiers strings for this package
+[macagua]
+
+Added the package structure files missing
+[macagua]
+
+Updated documentation files
+[macagua]
+
 0.7.2
 -----
 
