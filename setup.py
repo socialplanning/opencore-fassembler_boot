@@ -2,15 +2,15 @@ from setuptools import setup, find_packages
 
 version = '0.7.2'
 
-long_description = """
-%s
+long_description = (
+    open("README.rst").read()
+    + '\n' +
+    'Changes\n'
+    '=======\n'
+    + '\n' +
+    open("docs/CHANGES.txt").read()
+    + '\n')
 
-Changelog
-=========
-
-%s
-""" % (open('README.rst').read(),
-       open('docs/CHANGES.txt').read())
 
 setup(name='opencore-fassembler_boot',
       version=version,
