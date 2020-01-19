@@ -1,0 +1,2 @@
+- "Ethan Jucovy", 2011 - 2013, Owner, Python Developer
+- "Leonardo J. Caballero G.", 2020, Maintainer/Contributor, Python Developer

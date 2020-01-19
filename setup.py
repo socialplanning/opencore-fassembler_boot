@@ -9,6 +9,11 @@ long_description = (
     '=======\n'
     + '\n' +
     open("docs/CHANGES.txt").read()
+    + '\n' +
+    'Contributors\n'
+    '************\n'
+    + '\n' +
+    open("docs/CONTRIBUTORS.rst").read()
     + '\n')
 
 
