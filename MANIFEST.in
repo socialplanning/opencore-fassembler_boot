@@ -1,4 +1,9 @@
-include README.txt
-include doc/CHANGES.txt
+include README.rst
+include docs/*.txt docs/*.rst docs/*.GPL
 include fassembler_boot/newbuild.sh
 include fassembler_boot/opencore.conf
+include *.py
+recursive-include fassembler_boot *
+global-exclude *.pyc *.pyo *~
+prune build
+prune dist
