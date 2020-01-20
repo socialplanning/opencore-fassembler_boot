@@ -37,12 +37,21 @@ A third command is provided as well:
 Installation
 ============
 
-For install this package execute the following command:
+For install the latest released for this package, execute the following command:
 
 ::
 
+  $ pip-2.4 install opencore-fassembler_boot
+
+For install this package from development branch, execute the following command:
+
+::
+
+  $ git clone https://github.com/socialplanning/opencore-fassembler_boot.git
+  $ cd ./opencore-fassembler_boot
   $ pip-2.4 install -f https://dist.socialplanning.org/eggs/ \
                     -r requirements.txt
+  $ python2.4 setup.py install
 
 
 User / Developer Resources
