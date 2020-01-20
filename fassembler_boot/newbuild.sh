@@ -90,21 +90,21 @@ if [ $USE_WGET == "1" ]; then
     wget --no-check-certificate $FASSEMBLER_EXTRAS
 fi
 if [ $? == 0 ]; then
-    echo fassembler/bin/pip install -r $FASSEMBLER_EXTRAS_FILE
+    echo 'fassembler/bin/pip install -r $FASSEMBLER_EXTRAS_FILE'
     fassembler/bin/pip install -r $FASSEMBLER_EXTRAS_FILE
 fi
 
-echo bin/fassembler base_port="$BASE_PORT" var="$BASEDIR/var" db_prefix=${DB_PREFIX} etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} requirements_svn_repo="$REQ_SVN" num_extra_zopes=${NUM_EXTRA_ZOPES} requirements_use_wget=${USE_WGET} fassembler:topp
+echo 'bin/fassembler base_port="$BASE_PORT" var="$BASEDIR/var" db_prefix=${DB_PREFIX} etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} requirements_svn_repo="$REQ_SVN" num_extra_zopes=${NUM_EXTRA_ZOPES} requirements_use_wget=${USE_WGET} fassembler:topp'
 bin/fassembler base_port="$BASE_PORT" var="$BASEDIR/var" db_prefix=${DB_PREFIX} etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} requirements_svn_repo="$REQ_SVN" num_extra_zopes=${NUM_EXTRA_ZOPES} requirements_use_wget=${USE_WGET} fassembler:topp
 
-echo bin/fassembler etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} missing 
+echo "bin/fassembler etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} missing "
 bin/fassembler etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} missing 
 
 if [ $NUM_EXTRA_ZOPES != 0 ]; then
   echo "Building $NUM_EXTRA_ZOPES extra Zope instances.."
   for ((i=1; i<=NUM_EXTRA_ZOPES; i++))
   do
-    echo bin/fassembler zope_num=${i} extrazope
+    echo "bin/fassembler zope_num=${i} extrazope"
     bin/fassembler zope_num=${i} extrazope
   done
 fi
